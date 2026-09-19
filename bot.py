@@ -147,8 +147,21 @@ async def keep_alive():
         await asyncio.sleep(3600)
 
 
+async def run_safely(coro):
+    try:
+        await coro
+    except asyncio.CancelledError:
+        raise
+    except Exception:
+        log.exception("task crashed")
+
+
 async def main():
-    tasks = [asyncio.create_task(t) for t in (telegram_server(), discord_server(), keep_alive())]
+    tasks = [
+        asyncio.create_task(run_safely(telegram_server())),
+        asyncio.create_task(run_safely(discord_server())),
+        asyncio.create_task(keep_alive()),
+    ]
     try:
         await asyncio.gather(*tasks)
     except asyncio.CancelledError:

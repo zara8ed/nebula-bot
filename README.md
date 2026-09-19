@@ -1,14 +1,14 @@
 # Nebula Bot
 
-A minimal Telegram/Discord agent bot. It receives your messages, sends them to an OpenAI-compatible LLM endpoint (Groq by default), and replies. No crypto, no shell, no gateway — just a chat bot.
+A minimal Telegram/Discord chat bot. It receives your messages, sends them to an OpenAI-compatible LLM endpoint (Groq by default), and replies. It only talks to text endpoints - nothing else is installed.
 
 ## Env vars
 
 | Var | Required | Default |
 | --- | --- | --- |
-| `TELEGRAM_BOT_TOKEN` | at least one of TG/Discord | — |
-| `DISCORD_BOT_TOKEN` | at least one of TG/Discord | — |
-| `OPENAI_API_KEY` | yes | — |
+| `TELEGRAM_BOT_TOKEN` | at least one of TG/Discord | - |
+| `DISCORD_BOT_TOKEN` | at least one of TG/Discord | - |
+| `OPENAI_API_KEY` | yes | - |
 | `OPENAI_BASE_URL` | no | `https://api.groq.com/openai/v1` |
 | `LLM_MODEL` | no | `llama-3.3-70b-versatile` |
 | `SYSTEM_PROMPT` | no | `You are a helpful assistant.` |
