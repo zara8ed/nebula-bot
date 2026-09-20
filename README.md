@@ -1,6 +1,6 @@
 # Nebula Bot
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/YOUR_TEMPLATE_ID)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/YOUR_TEMPLATE_ID)
 
 A minimal Telegram/Discord chat bot. It receives your messages, sends them to an OpenAI-compatible LLM endpoint (Groq by default), and replies. It only talks to text endpoints - nothing else is installed.
 
